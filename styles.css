@@ -1,0 +1,252 @@
+header {
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav links */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center
+}
+
+header .nav-links {
+    list-style: none; /* Remove bullets */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Make the links horizontal */
+    gap: 20px; /* Add spacing between links */
+}
+
+header .nav-links li {
+    display: inline; /* Keep list items inline */
+}
+
+header .nav-links a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Set text color */
+    padding: 5px 10px; /* Add spacing for better clickable area */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+header .nav-links a:hover {
+    color: #00c8ff; /* Change color on hover */
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none; /* Hide by default */
+    position: absolute; /* Position relative to parent */
+    background-color: #444;
+    min-width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 5px;
+    overflow: hidden;
+    right: 0; /* Align to the right edge of the parent */
+}
+
+/* Adjust for small screens */
+@media (max-width: 768px) {
+    .dropdown-content {
+        left: 0; /* Align to the left if it fits better on small screens */
+        right: auto;
+        width: 100%; /* Make it full-width for smaller screens */
+    }
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.profile-pic {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-right: 10px; 
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between; /* Ensure there's space between the sections */
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Space between sections */
+    margin-top: 40px; /* Add top margin to push content below the header */
+    margin-bottom: 20px; /* Optional: Add bottom margin to give space after the sections */
+}
+
+
+
+/* About Section */
+.about-section {
+    width: 30%; /* Full width */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333;
+}
+
+.about-section h1 {
+    font-size: 1.5rem;
+    color: #00c8ff;
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+
+/* Projects Section */
+.projects-section {
+    width: 48%; /* Full width */
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    max-height: 250px; /* Set max height to enable scroll */
+    box-sizing: border-box;
+}
+
+/* Center the project gallery */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates a responsive grid */
+    gap: 20px; /* Space between the project items */
+    max-width: 100%; /* Ensure the grid fills its container */
+    margin: 0 auto; /* Center the grid within the container */
+    justify-items: center; /* Horizontally center the project boxes */
+}
+
+/* Style for each project item */
+.project-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Ensure each item takes full width of its grid cell */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.project-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.project-item a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #00c8ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-item a:hover {
+    text-decoration: underline;
+}
+
+/* Skills Section */
+.skills-section {
+    width: 50%; /* Adjust width to make it centered and not too wide */
+    margin: 20px auto; /* Center the section horizontally */
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Skills list styling */
+.skills-section ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.skills-section li {
+    margin: 10px 0;
+    padding: 5px 0;
+}
+
+.skills-section li::before {
+    content: "✔ "; /* Add a checkmark before each skill */
+    color: #00c8ff;
+}
+
+.skills-section li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    justify-content: center;
+}
+
+/* Ensure layout behaves on smaller screens */
+@media (max-width: 768px) {
+    /* Stack sections vertically on small screens */
+    .main-content {
+        flex-direction: column; /* Stack the sections vertically */
+        align-items: center; /* Center the sections horizontally */
+    }
+
+    .about-section,
+    .projects-section,
+    .skills-section {
+        width: 100%; /* Allow sections to take full width */
+        max-width: 90%; /* Limit the max width to 90% for smaller screens */
+    }
+
+    /* Ensure the projects and about sections are stacked on small screens */
+    .about-section {
+        order: 1; /* Put the about section on top */
+    }
+    
+    .projects-section {
+        order: 2; /* Keep the projects section below about */
+    }
+    
+    .skills-section {
+        order: 3; /* Skills section will be last */
+    }
+}
+
